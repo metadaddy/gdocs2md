@@ -7,37 +7,34 @@ A simple Google Apps script to convert a properly formatted Google Drive Documen
 
   * Adding this script to your doc (once per doc):
     * Open your Google Drive document (http://drive.google.com)
-    * Tools -> Script Manager > New
-    * Select "Blank Project", then paste this code in and save.
-    * Clear the myFunction() default empty function and paste the contents of [converttomarkdown.gapps](https://raw.github.com/mangini/gdocs2md/master/converttomarkdown.gapps) into the code editor
+    * Tools -> Script Editor
+    * Clear the myFunction() default empty function and paste the contents of [converttomarkdown.gapps](https://raw.github.com/metadaddy/gdocs2md/master/converttomarkdown.gapps) into the code editor
     * File -> Save
     
   * Running the script (run as many times as you want):
-    - Tools > Script Manager
+    - Tools > Script Editor
     - Select "ConvertToMarkdown" function.
     - Click Run button (First run will require you to authorize it. Authorize and run again)
-    - Converted doc with images attached will be emailed to you. Subject will be "[MARKDOWN_MAKER]...".
-
+    - Converted doc with images attached will be emailed to you. Subject will be "[MARKDOWN_MAKER]...". In Gmail, 'Download all attachments' to get the doc and images in one zip.
 
 ## Interpreted formats
   * Text:
-    * paragraphs are separated by two newlines
-    * text styled as heading 1, 2, 3, etc is converted to Markdown heading: #, ##, ###, etc
-    * text formatted with Courier New is backquoted: ``text``
-    * links are converted to MD format: `[anchortext](url)`
+    * Paragraphs are separated by two newlines
+    * Text styled as heading 1, 2, 3, etc is converted to Markdown heading: #, ##, ###, etc
+    * Text formatted with Courier New is backquoted: `` `text` ``
+    * Links in regular text are converted to MD format: `[anchortext](url)`
   * Lists:
     * Numbered lists are converted correctly, including nested lists
-    * bullet lists are converted to "`*`" Markdown format appropriately, including nested lists
+    * Bulleted lists are converted to "`*`" Markdown format appropriately, including nested lists
   * Images:
-    * images are correctly extracted and sent as attachments
+    * Images are correctly extracted and sent as attachments
   * Blocks:
     * Table of contents is replaced by `[[TOC]]`
-    * blocks of text delimited by "--- class whateverclassnameyouwant" and "---" are converted to `<div class="whateverclassnameyouwant"></div>` 
+    * Blocks of text delimited by "--- class whateverclassnameyouwant" and "---" are converted to `<div class="whateverclassnameyouwant"></div>` 
     * Source code: 
-      * **UPDATED**: blocks of text delimited by "--- source code" or "--- src" and "---" are converted to `<pre></pre>`
-      * **NEW**: blocks of text delimited by "--- source pretty" or "--- srcp" and "---" are converted to `<pre class="prettyprint"></pre>`
+      * Blocks of text delimited by "--- source code" or "--- src" and "---" are converted to use GitHub-style triple-backticks ```` ``` ````
     * Tables:
-      * **NEW**: Simple `<table>` processing
+      * **NEW**: Tables are converted to GitHub-style Markdown
   * "--- jsperf `<testID>`" is replaced by an iframe that shows an interactive chart of a JSPerf test. The `<testID>` is the last part of the URL of the Browserscope anchor in your JSPerf test. Something like `"agt1YS1wcm9maWxlcnINCxIEVGVzdBjlm_EQDA"` in the URL `http://www.browserscope.org/user/tests/table/agt1YS1wcm9maWxlcnINCxIEVGVzdBjlm_EQDA`
  
 
@@ -46,6 +43,7 @@ A simple Google Apps script to convert a properly formatted Google Drive Documen
 
 * Renato Mangini - [G+](//google.com/+renatomangini) - [Github](//github.com/mangini)
 * Ed Bacher - [G+](//plus.google.com/106923847899206957842) - [Github](//github.com/evbacher)
+* Pat Patterson - [Github](//github.com/metadaddy)
 
 ## LICENSE
 
